@@ -1,0 +1,19 @@
+Q : Given a string, Your task is to  complete the function encode that returns the run length encoded string for the given string.
+    eg if the input string is “wwwwaaadexxxxxx”, then the function should return “w4a3d1e1x6″.
+Ans : 
+    class GfG {
+      String encode(String str){
+            char[] s = str.toCharArray();
+            int n = s.length, i = 0;
+            StringBuilder res = new StringBuilder();
+            while(i < n){
+                int cnt = 1;
+                while(i < n - 1 && s[i] == s[i + 1]){
+                    i++; cnt++;
+                }
+                res.append(s[i]).append(cnt);
+                i++;
+            }
+            return res.toString();
+      }
+ }
